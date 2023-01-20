@@ -5,7 +5,9 @@ from PIL import Image
 from IPython.display import display
 
 # Insert your auth key in the next line. You can generate the key in https://beta.openai.com/account/api-keys
-openai = OpenAIRequest("xxxxxxxxxxxxxxxxxxxxxx")
+MY_KEY = "xxxxxxxxxxxxxxxxxxxxxx"
+
+openai = OpenAIRequest(MY_KEY)
 model = "text-davinci-003"
 n = 1
 max_tokens = 4000
@@ -23,7 +25,6 @@ while op != 3:
             model = input("\nModel to be used in text generation (default value -> 'text-davinci-003'): ")
             n = int(input("Number of responses to be generated (default value -> 1): "))
             max_tokens = int(input("Number of tokens used for prompt and responses. Max to 4096  (default value -> 4000): "))
-            print(type(max_tokens))
             temperature = float(input("Set the temperature level between 0 - more conservative response - and 1 - more 'creative' response (default value -> 0.7): "))
             best_of = int(input("Number of responses to be displayed from the generated answers (default value -> 1): "))
             prompt = input("\nInsert the prompt for chat GPT: ")
